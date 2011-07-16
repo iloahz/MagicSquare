@@ -42,6 +42,23 @@ void Draw(){
     painter->setPen(Qt::NoPen);
     painter->setBrush(QBrush(Qt::white,Qt::SolidPattern));
     painter->drawRect(0,0,pixelx,pixely);
+    painter->setBrush(Qt::NoBrush);
+    painter->setPen(Qt::blue);
+    painter->setWindow(0,0,pixelx,pixely);
+    painter->setFont(QFont("Times", 10));
+    for (int i=1;i<=n*n;i++){
+        char ts[5];
+        sprintf(ts,"%d",i);
+        QString num(ts);
+        QRect rect;
+        double x,y,l;
+        x = (location[i][0]*1.0)*pixelx/(n+1);
+        y = (location[i][1]*1.0)*pixely/(n+1);
+        l = pixelx*0.5/(n+1);
+        rect.setRect(x-l,y-l,l*2,l*2);
+        painter->drawText(rect,Qt::AlignCenter,num);
+    }
+    painter->setWindow(0,0,n+1,n+1);
     painter->setPen(Qt::lightGray);
     for (int i=0;i<=n;i++) painter->drawLine(QPointF(0.5,i+0.5),QPointF(n+0.5,i+0.5));
     for (int i=0;i<=n;i++) painter->drawLine(QPointF(i+0.5,0.5),QPointF(i+0.5,n+0.5));
