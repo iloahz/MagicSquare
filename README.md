@@ -15,3 +15,18 @@ Process
 Improvments
 ===========
 * Enhance the algorithm of computing all the possible magic squares, make it faster.
+
+Top 10
+======
+Here are the top 10 beautiful squares.
+ID	BI
+2	20.31
+263	20.31
+1	22.79
+619	22.79
+222	22.79
+3	23.37
+417	23.37
+264	23.37
+458	26.89
+87	27.26
